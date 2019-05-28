@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-subtitle>New Name</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form #form="ngForm" autocomplete="off" (ngSubmit)="save()">
+      <section fxLayout="row wrap" fxLayoutGap="1em" fxFlexAlign="start">
+        <mat-form-field fxFlex>
+          <mat-label>Nome</mat-label>
+          <input matInput name="inputName" [(ngModel)]="name" maxlength="50" autofocus required>
+        </mat-form-field>
+      </section>
+      <mat-card-actions>
+        <div fxFlex></div>
+        <button mat-raised-button color="primary" type="button" (click)="cancel()">Cancelar</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Salvar</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>
